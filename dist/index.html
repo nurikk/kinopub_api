@@ -5,25 +5,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Page Title</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="./KinopubApi.js"></script>
+
 
 </head>
 <body>
-  <button id="request-pair">request pair</button>
-  <pre id="code"></pre>
-
-  <button id="check">check pair</button>
-  <script>
-    const onConfirm = function(user_code, verification_url){
-      console.log('open', verification_url, 'enter', user_code);
-    }
-    const onSuccess = function(token){
-      console.log('onSuccess', token);
-    }
-    const api = new kinopub.Api(onConfirm, onSuccess);
-
-  </script>
-
-  <ul id="cats"></ul>
+  <div id="root"></div>
+  <script src="./kinopub.Demo.js"></script>
 </body>
 </html>

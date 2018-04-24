@@ -1,29 +1,45 @@
 import {AuthApi} from './AuthApi';
-class KinopubApi {
+const toUrl = (params) => {
+  return Object.keys(params).reduce(function (a, k) {
+    a.push(k + '=' + encodeURIComponent(params[k]));
+    return a;
+  }, []).join('&')
+};
+
+export class KinopubApi {
   constructor() {
-    this.apiHostUrl = "https://api.service-kp.com/v1";
-    this.info = {
-      title: 'Kinopub Webos player',
-      hardware: 'LG C7',
-      software: 'https://github.com/nurikk/kinopub'
-    };
-    this.auth = new AuthApi(this.info);
-    // this.auth.notify();
   }
-  _api(name, callback) {
-    fetch(`${this.apiHostUrl}${name}?access_token=${this.auth.getToken()}`)
+  _api(name, params={}, callback) {
+    let _params = Object.assign({
+      access_token: this.auth.getAccessToken()
+    }, params);
+    fetch(`${this.apiHostUrl}${name}?${toUrl(_params)}`)
       .then(function (response) {
         return response.json();
       })
       .then(function (myJson) {
-        console.log(myJson);
+        callback(myJson);
       });
   }
 
   getUnwatchedFilms(callback) {
-    this._api('/watching/movies', callback);
+    this._api('/watching/movies', {}, callback);
   }
   getCategories(callback) {
-    this._api('/types', callback);
+    this._api('/types', {}, callback);
+  }
+  /**
+   * Shortcut - популярные видео
+   * @param {object} params
+   * @param {string} params.type - Типы видео контента
+   * @param {string} params.page=0 - Текущая страница
+   * @param {string} params.perpage=25 - Количество на страницу
+   */
+  getPopularVideos(callback, params = {}){
+    this._api('/items/popular', params, callback);
+  }
+
+  getVideo(callback, params = {}){
+    this._api(`/items/${params.id}`, {}, callback);
   }
 };

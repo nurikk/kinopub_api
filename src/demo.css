@@ -1,0 +1,30 @@
+.movies {
+  flex-wrap: wrap;
+  display: flex;
+
+}
+
+.movies .movie {
+  flex: 1;
+  cursor: pointer;
+  padding: 10px;
+  display: inline-block;
+  border: 1px solid black;
+  margin: 10px;
+}
+
+.movies .movie:nth-child(1) {
+  background: #ccc;
+  order: 1;
+}
+.movies .movie:nth-child(2) {
+  background: #eee;
+  order: 0;
+}
+.movies .movie:nth-child(3) {
+  background: #eee;
+  order: 2;
+}
+
+.movies .poster {
+}
