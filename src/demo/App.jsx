@@ -8,6 +8,7 @@ import Home from './Home';
 import Pair from './Pair';
 import VideoPage from './VideoPage';
 import Category from './Category';
+import NotFoundPage from './NotFoundPage';
 import {Switch, Route} from 'react-router-dom'
 
 class App extends Component {
@@ -49,6 +50,7 @@ class App extends Component {
           <Route exact path='/' component={Home}/>
           <Route path='/category/:contentType' component={Category}/>
           <Route path='/video/:videoId' component={VideoPage}/>
+          <Route component={NotFoundPage}/>
         </Switch>
       );
     }

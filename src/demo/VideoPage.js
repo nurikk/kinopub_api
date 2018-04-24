@@ -77,7 +77,6 @@ class VideoPage extends Component {
         </ul>
       </div>
     );
-
   }
 }
 export default VideoPage;
