@@ -1,6 +1,6 @@
 import {AuthApi} from './AuthApi';
 import {KinopubApi} from './KinopubApi';
-class Api extends KinopubApi {
+class ApiClass extends KinopubApi {
 
   on(event, callback){
     if(typeof this.events[event] === 'undefined'){
@@ -32,4 +32,4 @@ class Api extends KinopubApi {
   }
 };
 
-export {Api};
+export const Api = new ApiClass();

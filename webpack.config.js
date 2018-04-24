@@ -3,7 +3,7 @@ var path = require('path');
 module.exports = {
   entry: {
     'Api': './src/Api.js',
-    'Demo': './src/demo.js'
+    'Demo': './src/demo/index.jsx'
   },
   output: {
 		path: path.join(__dirname, "dist"),
@@ -14,7 +14,8 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, "dist"),
     compress: true,
-    port: 9000
+    port: 9000,
+    historyApiFallback: true
   },
 
   module: {

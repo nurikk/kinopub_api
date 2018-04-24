@@ -13,7 +13,8 @@ export class KinopubApi {
     let _params = Object.assign({
       access_token: this.auth.getAccessToken()
     }, params);
-    fetch(`${this.apiHostUrl}${name}?${toUrl(_params)}`)
+    const url = `${this.apiHostUrl}${name}`;
+    fetch([url, toUrl(_params)].join(url.indexOf('?') ===-1 ? '?' : '&'))
       .then(function (response) {
         return response.json();
       })
@@ -41,5 +42,9 @@ export class KinopubApi {
 
   getVideo(callback, params = {}){
     this._api(`/items/${params.id}`, {}, callback);
+  }
+
+  getVideos(callback, params = {}) {
+    this._api(`/items?${toUrl(params)}`, {}, callback);
   }
 };
