@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import * as kinopub from './../Api';
+import * as kinopub from './../../Api';
 
 class VideoPage extends Component {
   constructor() {

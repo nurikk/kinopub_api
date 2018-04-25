@@ -1,0 +1,10 @@
+.header-nav {
+  padding: 10px;
+  /* width: 100%; */
+  /* margin: auto; */
+  text-align: center;
+}
+
+.header-nav a {
+  padding: 10px;
+}

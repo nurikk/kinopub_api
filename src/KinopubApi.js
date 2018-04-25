@@ -7,8 +7,6 @@ const toUrl = (params) => {
 };
 
 export class KinopubApi {
-  constructor() {
-  }
   _api(name, params={}, callback) {
     let _params = Object.assign({
       access_token: this.auth.getAccessToken()

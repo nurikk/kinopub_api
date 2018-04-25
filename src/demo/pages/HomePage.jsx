@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import * as kinopub from './../Api';
+import * as kinopub from './../../Api';
 import {Link} from "react-router-dom";
-class Home extends Component {
+class HomePage extends Component {
   constructor() {
     super();
     this.state = {
@@ -31,4 +31,4 @@ class Home extends Component {
     );
   }
 }
-export default Home;
+export default HomePage;

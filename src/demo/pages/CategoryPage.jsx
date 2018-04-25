@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import * as kinopub from './../Api';
-import Movie from './Movie';
-class Category extends Component
+import * as kinopub from './../../Api';
+import Movie from '../components/Movie';
+class CategoryPage extends Component
 {
   constructor() {
     super();
@@ -36,4 +36,4 @@ class Category extends Component
     )
   }
 }
-export default Category;
+export default CategoryPage;
