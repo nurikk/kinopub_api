@@ -15,15 +15,14 @@ class CategoryPage extends Component
   }
 
   componentDidMount() {
-    const {contentType} = this.props.match.params;
-
+    const {match: {params: {contentType}}} = this.props;
     kinopub
       .Api
       .getVideos(this.onMoviesLoaded.bind(this), {type: contentType});
   }
 
   render() {
-    const {contentType} = this.props.match.params;
+    const {match: {params: {contentType}}} = this.props;
     return (
       <div className="movies">
         {this

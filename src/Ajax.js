@@ -1,7 +1,7 @@
 
 const post = (url, data) => {
   let _data = new window.URLSearchParams();
-  for (let k in data) {
+  for (const k in data) {
     _data.append(k, data[k]);
   }
   return fetch(url, {

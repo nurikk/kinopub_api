@@ -3,8 +3,8 @@ export class Storage {
     window.localStorage.removeItem(key);
   }
   getItem(key) {
-    let storageValue = window.localStorage.getItem(key) || '{}';
-    let storageItem = JSON.parse(storageValue);
+    const storageValue = window.localStorage.getItem(key) || '{}';
+    const storageItem = JSON.parse(storageValue);
     if(storageItem){
       if(storageItem.expire && Date.now() < storageItem.expire){
         return storageItem.value;
