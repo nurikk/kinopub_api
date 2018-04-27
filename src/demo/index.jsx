@@ -3,8 +3,8 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import {BrowserRouter} from 'react-router-dom'
-
-ReactDOM.render((
+import ReactTV from 'react-tv'
+ReactTV.render((
   <BrowserRouter>
     <App/>
   </BrowserRouter>

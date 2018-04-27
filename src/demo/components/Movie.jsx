@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from "react-router-dom";
+import css from "./Movie.css";
 class Movie extends Component {
   render() {
     const {data, onClick} = this.props;
